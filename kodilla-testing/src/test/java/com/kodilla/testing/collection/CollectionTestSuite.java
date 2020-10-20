@@ -54,10 +54,10 @@ public class CollectionTestSuite {
         numbers.add(87);
         numbers.add(90);
 
-        OddNumbersExterminator normalList = new OddNumbersExterminator();
+        OddNumbersExterminator oddNumbers = new OddNumbersExterminator();
 
         //When
-        List<Integer> evenList = normalList.exterminate(numbers);
+        List<Integer> evenList = oddNumbers.exterminate(numbers);
 
 
         //Then

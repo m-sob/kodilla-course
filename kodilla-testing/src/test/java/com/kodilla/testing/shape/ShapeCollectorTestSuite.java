@@ -3,6 +3,9 @@ package com.kodilla.testing.shape;
 
 import org.junit.jupiter.api.*;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 @DisplayName("TDD: Shape Test Suite \uD83D\uDE31")
 class ForumTestSuite {
@@ -27,46 +30,46 @@ class ForumTestSuite {
 
     // Test 1
     @Test
-    void addFigure(Shape shape) {
+    void addFigure() {
         // Given
         ShapeCollector shapeCollector = new ShapeCollector();
-        Circle circle = new Circle(circle, 1)
+        Circle circle = new Circle(1);
 
         // When
         shapeCollector.addFigure(circle);
-        Circle expected = shapeCollector.getFigure(0);
 
         //Then
-        Assertions.assertArrayEquals(expected, circle);
+        assertEquals(1, shapeCollector.getShapes().size());
     }
 
     // Test 2
     @Test
-    void removeFigure(Shape shape) {
+    void removeFigure() {
         // Given
         ShapeCollector shapeCollector = new ShapeCollector();
-        Circle circle = new Circle(circle, 1)
+        Circle circle = new Circle(1);
+        shapeCollector.addFigure(circle);
 
         // When
-        shapeCollector.removeFigure(circle, 0);
-        // expected pusty record?? czy zakładamy, że lista jest pusta?
+        shapeCollector.removeFigure(circle);
 
         //Then
-        Assertions.assertArrayEquals(..., );
+        assertTrue(shapeCollector.getShapes().isEmpty());
     }
 
     // Test 3
     @Test
-    void getFigure(int n) {
+    void getFigure() {
         // Given
         ShapeCollector shapeCollector = new ShapeCollector();
-        Circle circle = new Circle(circle, 1);
+        Circle circle = new Circle(1);
+        shapeCollector.addFigure(circle);
 
         // When
-        shapeCollector.getFigure(int 1)
+        Shape result = shapeCollector.getFigure(0);
 
         //Then
-        Assertions.assertArrayEquals();
+        Assertions.assertEquals(result.getShapeName(), "Circle");
     }
 
     // Test 3
@@ -74,13 +77,18 @@ class ForumTestSuite {
     void showFigures() {
         // Given
         ShapeCollector shapeCollector = new ShapeCollector();
-        Circle circle = new Circle(circle, 1);
+        Circle circle = new Circle(1);
+        Triangle triangle = new Triangle(10, 5);
+        Square square = new Square(1);
+        shapeCollector.addFigure(circle);
+        shapeCollector.addFigure(triangle);
+        shapeCollector.addFigure(square);
 
         // When
-        Circle expected = shapeCollector.getFigure(0);
+        String result = shapeCollector.showFigures();
 
         //Then
-        Assertions.assertArrayEquals(expected, showFigures());
+        assertEquals("Circle Triangle Square ", result);
     }
 }
 

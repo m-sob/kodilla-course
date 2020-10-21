@@ -1,21 +1,10 @@
 package com.kodilla.testing.shape;
 
-public class Shape {
-    private String shapeName;
+public interface Shape {
 
-    public Shape(String shapeName) {
-        this.shapeName = shapeName;
-    }
+    String getShapeName();
 
-    public Shape getShapeName() {
-        return shapeName;
-    }
+    double getField();
 
-    public Shape getField(){
-        //
-    }
-
-    //    getShapeName()
-    //    getField()
 }
 

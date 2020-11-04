@@ -68,7 +68,7 @@ class CalculateStatisticsTest {
         assertEquals(10, calculateStatistics.getComments());
         assertEquals(200, calculateStatistics.getPostsPerUsers());
         assertEquals(2 , calculateStatistics.getCommentsPerUsers());
-        assertEquals(0.001, calculateStatistics.getCommentsPerPosts());
+        assertEquals(0.01, calculateStatistics.getCommentsPerPosts());
     }
 
     @Test

@@ -45,7 +45,7 @@ class CalculateStatisticsTest {
         assertEquals(0, calculateStatistics.getPosts());
         assertEquals(5, calculateStatistics.getComments());
         assertEquals(0, calculateStatistics.getPostsPerUsers());
-        assertEquals((double) 5 / 6, calculateStatistics.getCommentsPerUsers());
+        assertEquals(0.8333333333333334, calculateStatistics.getCommentsPerUsers());
         assertEquals(0, calculateStatistics.getCommentsPerPosts());
 
     }
@@ -67,8 +67,8 @@ class CalculateStatisticsTest {
         assertEquals(1000, calculateStatistics.getPosts());
         assertEquals(10, calculateStatistics.getComments());
         assertEquals(200, calculateStatistics.getPostsPerUsers());
-        assertEquals((double) 10 / 5, calculateStatistics.getCommentsPerUsers());
-        assertEquals((double) 10 / 1000, calculateStatistics.getCommentsPerPosts());
+        assertEquals(2 , calculateStatistics.getCommentsPerUsers());
+        assertEquals(0.001, calculateStatistics.getCommentsPerPosts());
     }
 
     @Test

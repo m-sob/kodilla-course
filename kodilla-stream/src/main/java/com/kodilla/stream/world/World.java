@@ -19,18 +19,9 @@ public final class World {
 
     public BigDecimal getPeopleQuantity() {
         return continents.stream()
-//                .flatMap(countries -> countries.getCountries().stream())
-                .flatMap(continent -> continent.getCountries().stream())
-                .map(country -> country.getPeopleQuantity())
-                .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
+                .flatMap(continent -> continent.getCountries().stream()) //tworzy jeden wielki stream z krajow
+                .map(country -> country.getPeopleQuantity()) //zamienia kraje na BigDecimale
+                .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current)); //oblicza sume z BigDecimali
     }
 
 }
-
-//Do metody w klasie world
-
-       /* BigDecimal suma listKontynentow.stream
-                .flatMap na kraje
-                .map na BigDecimal
-                .reduce aby policzyc sume
-        */

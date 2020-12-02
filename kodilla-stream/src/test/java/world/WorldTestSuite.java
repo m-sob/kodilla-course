@@ -7,23 +7,21 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 public class WorldTestSuite {
 
     @Test
     void testGetPeopleQuantity() {
         //Given
-        Continent northAmerica = new Continent("North America");
+        Continent northAmerica = new Continent();
         northAmerica.addCountry(new Country("USA", new BigDecimal("2")));
         northAmerica.addCountry(new Country("Canada", new BigDecimal("1")));
 
-        Continent europe = new Continent("Europe");
+        Continent europe = new Continent();
         europe.addCountry(new Country("Poland", new BigDecimal("2")));
         europe.addCountry(new Country("Germany", new BigDecimal("2")));
 
-        Continent asia = new Continent("Asia");
+        Continent asia = new Continent();
         asia.addCountry(new Country("China", new BigDecimal("5")));
         asia.addCountry(new Country("Japan", new BigDecimal("4")));
 
